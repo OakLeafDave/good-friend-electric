@@ -1,0 +1,25 @@
+# Netlify deploy config for the Good Friend Electric static site.
+# Deploy: drag this folder into app.netlify.com, or `netlify deploy --prod`.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Force HTTPS canonical host (adjust once the real domain is connected)
+[[redirects]]
+  from = "https://www.goodfriendelectric.com/*"
+  to = "https://goodfriendelectric.com/:splat"
+  status = 301
+  force = true

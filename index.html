@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Good Friend Electric | Electrical & Lighting Distributor — Serving the Jersey Shore Since 1937</title>
+<meta name="description" content="Good Friend Electric is one of the most progressive electrical and lighting distributors in the industry. Family-owned since 1937 with six branches across Ocean & Monmouth County, NJ — Toms River, Brick, Lacey, Manahawkin, Lakewood & Wall.">
+<meta name="theme-color" content="#1c3f94">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Good Friend Electric — Electrical & Lighting Distributor Since 1937">
+<meta property="og:description" content="Family-owned electrical & lighting distributor serving the Jersey Shore for 89 years. Six branches. More than 350 years of combined industry experience.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:url" content="https://goodfriendelectric.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectricalSupplyStore",
+  "name": "Good Friend Electric",
+  "foundingDate": "1937",
+  "slogan": "One of the most progressive electrical and lighting distributors in the industry.",
+  "url": "https://goodfriendelectric.com/",
+  "logo": "https://goodfriendelectric.com/assets/logo.gif",
+  "telephone": "+1-732-349-4100",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "265 Route 37 East",
+    "addressLocality": "Toms River",
+    "addressRegion": "NJ",
+    "addressCountry": "US"
+  },
+  "areaServed": "Ocean & Monmouth County, New Jersey",
+  "openingHours": "Mo-Fr 07:30-17:00"
+}
+</script>
+
+<style>
+  :root{
+    --blue:#1c3f94;        /* primary royal blue */
+    --blue-dark:#14306f;
+    --blue-mid:#2a56b0;
+    --blue-light:#5b9bd5;  /* ribbon / accent */
+    --gold:#f6c945;        /* lightbulb yellow */
+    --ink:#1a2233;
+    --slate:#5a6577;
+    --line:#e4e8f0;
+    --bg-soft:#f4f7fc;
+    --white:#fff;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(20,48,111,.10);
+    --shadow-lg:0 24px 60px rgba(20,48,111,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.6;background:var(--white);-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:'Barlow Condensed','Inter',sans-serif;line-height:1.05;text-transform:uppercase;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{width:min(1160px,92vw);margin-inline:auto}
+  section{padding:clamp(56px,8vw,104px) 0}
+  .eyebrow{font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem;color:var(--blue-light)}
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;padding:.85em 1.6em;border-radius:999px;font-size:1rem;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;cursor:pointer;border:2px solid transparent}
+  .btn-gold{background:var(--gold);color:var(--blue-dark)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(246,201,69,.4)}
+  .btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+
+  /* ---------- Top bar ---------- */
+  .topbar{background:var(--blue-dark);color:#dce6fb;font-size:.86rem}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem 0;flex-wrap:wrap}
+  .topbar a{color:#fff;font-weight:600}
+  .topbar .tb-hours{opacity:.85}
+
+  /* ---------- Header / nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.6rem 0}
+  .brand img{height:56px;width:auto}
+  nav.menu{display:flex;gap:1.6rem;align-items:center}
+  nav.menu a{font-weight:600;font-size:.96rem;color:var(--ink);position:relative;padding:.2em 0}
+  nav.menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);transition:width .2s}
+  nav.menu a:hover::after{width:100%}
+  .nav-cta{display:flex;gap:.6rem;align-items:center}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:.4rem}
+  .menu-toggle span{display:block;width:26px;height:3px;background:var(--blue);border-radius:2px;margin:5px 0;transition:.25s}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;color:#fff;background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue) 55%,var(--blue-mid) 100%);overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.09) 1px,transparent 0);background-size:26px 26px;opacity:.6}
+  .hero::after{content:"";position:absolute;top:-30%;right:-10%;width:520px;height:520px;background:radial-gradient(circle,rgba(246,201,69,.22),transparent 70%);filter:blur(10px)}
+  .hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:clamp(52px,7vw,96px) 0}
+  .hero h1{font-size:clamp(2.6rem,5.6vw,4.5rem);margin:.4rem 0 .3rem}
+  .hero h1 .hl{color:var(--gold)}
+  .hero p.lede{font-size:1.18rem;color:#e3ecfb;max-width:42ch;margin-bottom:1.8rem}
+  .hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:1.8rem}
+  .hero-stats{display:flex;gap:2rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.18);padding-top:1.4rem}
+  .hero-stats .n{font-family:'Barlow Condensed',sans-serif;font-size:2.4rem;color:var(--gold);line-height:1}
+  .hero-stats .l{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:#c9d8f5}
+  .hero-badge{justify-self:center;text-align:center}
+  .hero-badge .disc{width:min(340px,80%);margin:0 auto;background:#fff;border-radius:20px;padding:2.2rem 1.6rem;box-shadow:var(--shadow-lg);color:var(--ink)}
+  .hero-badge .disc img{width:78%;margin:0 auto .9rem}
+  .hero-badge .disc .since{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;color:var(--blue);text-transform:uppercase}
+  .hero-badge .disc .sub{font-size:.9rem;color:var(--slate)}
+
+  /* ---------- trust strip ---------- */
+  .trust{background:var(--bg-soft);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:flex;gap:2rem;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:1.5rem 0}
+  .trust .item{display:flex;gap:.7rem;align-items:center;font-weight:600;color:var(--blue-dark);font-size:.98rem}
+  .trust .item svg{flex:none}
+
+  /* ---------- section heading ---------- */
+  .sec-head{max-width:720px;margin-bottom:2.6rem}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem);color:var(--blue-dark);margin:.3rem 0 .6rem}
+  .sec-head p{color:var(--slate);font-size:1.08rem}
+  .center{text-align:center;margin-inline:auto}
+
+  /* ---------- About ---------- */
+  .about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3.2rem;align-items:center}
+  .about .timeline{background:var(--bg-soft);border-radius:var(--radius);padding:2rem;border:1px solid var(--line)}
+  .about .timeline li{list-style:none;display:grid;grid-template-columns:auto 1fr;gap:1rem;padding:.7rem 0;border-bottom:1px dashed var(--line)}
+  .about .timeline li:last-child{border-bottom:0}
+  .about .timeline .yr{font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--blue);font-size:1.35rem;min-width:52px}
+  .about .timeline .ev{font-size:.98rem;color:var(--ink)}
+  .about p{margin-bottom:1rem;color:var(--slate)}
+  .about p strong{color:var(--ink)}
+
+  /* ---------- Products / categories ---------- */
+  .cats{background:var(--bg-soft)}
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem}
+  .cat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;transition:transform .18s,box-shadow .18s,border-color .18s}
+  .cat:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--blue-light)}
+  .cat .ico{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--blue-mid));margin-bottom:1rem}
+  .cat h3{font-size:1.35rem;color:var(--blue-dark);margin-bottom:.35rem}
+  .cat p{font-size:.94rem;color:var(--slate)}
+
+  /* ---------- Locations ---------- */
+  .loc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem}
+  .loc{border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;position:relative;overflow:hidden;transition:transform .18s,box-shadow .18s}
+  .loc:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .loc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--blue-light))}
+  .loc .flag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:#eaf1fc;padding:.25em .7em;border-radius:999px;margin-bottom:.7rem}
+  .loc.hq .flag{color:#8a6a00;background:#fdf3d4}
+  .loc h3{font-size:1.6rem;color:var(--blue-dark);margin-bottom:.3rem}
+  .loc address{font-style:normal;color:var(--slate);font-size:.96rem;margin-bottom:.9rem}
+  .loc .phone{display:inline-flex;align-items:center;gap:.45em;font-weight:700;color:var(--blue);font-size:1.12rem}
+  .loc .links{margin-top:.9rem;display:flex;gap:1rem;font-size:.9rem;font-weight:600}
+  .loc .links a{color:var(--blue-light)}
+
+  /* ---------- Hours banner ---------- */
+  .hours{background:var(--blue);color:#fff}
+  .hours .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:2.6rem;align-items:center}
+  .hours h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.6rem}
+  .hours .card-set{display:grid;gap:1rem}
+  .hours .hcard{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:1.1rem 1.4rem;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+  .hours .hcard .d{font-weight:700}
+  .hours .hcard .t{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;color:var(--gold)}
+  .hours .hcard small{display:block;color:#c9d8f5;font-size:.8rem;font-weight:400}
+
+  /* ---------- Contact / newsletter ---------- */
+  .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+  form.lead{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:2rem}
+  form.lead label{display:block;font-weight:600;font-size:.9rem;margin:.9rem 0 .35rem}
+  form.lead input,form.lead select,form.lead textarea{width:100%;padding:.8rem 1rem;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.98rem;background:#fff}
+  form.lead input:focus,form.lead select:focus,form.lead textarea:focus{outline:2px solid var(--blue-light);border-color:var(--blue-light)}
+  form.lead .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  form.lead button{margin-top:1.3rem;width:100%;justify-content:center}
+  .form-note{font-size:.82rem;color:var(--slate);margin-top:.8rem;text-align:center}
+  .contact-info h3{font-size:1.7rem;color:var(--blue-dark);margin-bottom:.4rem}
+  .contact-info .big-phone{font-family:'Barlow Condensed',sans-serif;font-size:2.6rem;color:var(--blue);line-height:1;margin:.3rem 0 1rem}
+  .contact-info ul{list-style:none;margin-top:1.2rem}
+  .contact-info ul li{display:flex;gap:.7rem;padding:.5rem 0;color:var(--slate)}
+  .contact-info ul li strong{color:var(--ink)}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--blue-dark);color:#c3d3f2;padding:3.4rem 0 2rem;font-size:.92rem}
+  footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2.4rem;margin-bottom:2.2rem}
+  footer img.flogo{height:60px;margin-bottom:1rem;filter:brightness(0) invert(1);opacity:.95}
+  footer h4{color:#fff;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em;font-size:1.1rem;margin-bottom:.9rem}
+  footer a{color:#c3d3f2}
+  footer a:hover{color:var(--gold)}
+  footer .fcol ul{list-style:none;display:grid;gap:.5rem}
+  footer .legal{border-top:1px solid rgba(255,255,255,.14);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;color:#8fa6d6;font-size:.84rem}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .hero .wrap,.about .wrap,.hours .wrap,.contact .wrap{grid-template-columns:1fr}
+    .hero-badge{order:-1}
+    .hero-badge .disc{width:min(300px,70%)}
+    nav.menu,.nav-cta .btn{display:none}
+    .menu-toggle{display:block}
+    nav.menu.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:#fff;padding:1.2rem 6vw;box-shadow:var(--shadow);gap:1rem;border-bottom:1px solid var(--line)}
+    footer .grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:560px){
+    form.lead .row{grid-template-columns:1fr}
+    footer .grid{grid-template-columns:1fr}
+    .topbar .tb-hours{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span class="tb-hours">Mon–Fri 7:30am–5:00pm &nbsp;·&nbsp; Saturday hours vary by branch</span>
+    <span>Main / Toms River: <a href="tel:+17323494100">(732) 349-4100</a></span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Good Friend Electric home">
+      <img src="assets/logo.gif" srcset="assets/logo.gif 1x, assets/logo@2x.gif 2x" alt="Good Friend Electric — 89 Years, 1937–2026" width="126" height="56">
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#locations">Locations</a>
+      <a href="#hours">Hours</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-blue" href="#locations">Find a Branch</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Family-owned since 1937 · Jersey Shore</span>
+      <h1>Your <span class="hl">Good Friend</span> in Electrical &amp; Lighting</h1>
+      <p class="lede">One of the most progressive electrical and lighting distributors in the industry — with six branches, deep inventory, and a team you actually know by name.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#locations">Visit a Branch</a>
+        <a class="btn btn-ghost" href="#contact">Open an Account</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="n">89</div><div class="l">Years in business</div></div>
+        <div><div class="n">6</div><div class="l">Branch locations</div></div>
+        <div><div class="n">350+</div><div class="l">Yrs combined experience</div></div>
+        <div><div class="n">4</div><div class="l">Generations family-owned</div></div>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="disc">
+        <img src="assets/logo.gif" alt="Good Friend Electric 89 Years anniversary logo">
+        <div class="since">Est. 1937 · Toms River, NJ</div>
+        <div class="sub">Four generations of the Rosen family, serving contractors &amp; homeowners across Ocean &amp; Monmouth County.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust">
+  <div class="wrap">
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1c3f94" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6z"/></svg>
+      Family-owned, four generations
+    </div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1c3f94" stroke-width="2"><path d="M20 7L9 18l-5-5"/></svg>
+      NAED member distributor
+    </div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1c3f94" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Same-day counter &amp; will-call
+    </div>
+    <div class="item">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1c3f94" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+      6 branches, one relationship
+    </div>
+  </div>
+</div>
+
+<!-- About / History -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Our Story</span>
+      <h2 style="font-size:clamp(2rem,4vw,3rem);color:var(--blue-dark);margin:.3rem 0 1rem">89 years of powering the Shore</h2>
+      <p><strong>Good Friend Electric was founded in 1937 by Manny and Lillian Goodfriend</strong>, on Main Street in downtown Toms River. In 1949 Irving Rosen purchased the business, and by 1957 the company was incorporated as Good Friend Electric — the beginning of four generations of family ownership.</p>
+      <p>Today the company is led by President <strong>David Rosen</strong> and his son <strong>Ethan Rosen</strong>, Sales &amp; Operations Manager. Our associate team collectively brings <strong>more than 350 years</strong> of industry experience to every counter, every order, and every job site.</p>
+      <p>From a single downtown storefront to six full-service branches across Ocean &amp; Monmouth County, one thing hasn't changed: when you deal with Good Friend Electric, you're dealing with a good friend.</p>
+      <a class="btn btn-blue" href="#contact" style="margin-top:.6rem">Become a Customer</a>
+    </div>
+    <div class="timeline">
+      <ul>
+        <li><span class="yr">1937</span><span class="ev">Founded by Manny &amp; Lillian Goodfriend on Main Street, Toms River.</span></li>
+        <li><span class="yr">1957</span><span class="ev">Incorporated as Good Friend Electric under the Rosen family.</span></li>
+        <li><span class="yr">1987</span><span class="ev">50th anniversary — first branch opens in <strong>Lacey</strong>.</span></li>
+        <li><span class="yr">1989</span><span class="ev"><strong>Brick</strong> branch opens.</span></li>
+        <li><span class="yr">1995</span><span class="ev"><strong>Manahawkin</strong> branch opens.</span></li>
+        <li><span class="yr">1998</span><span class="ev"><strong>Lakewood</strong> branch opens.</span></li>
+        <li><span class="yr">2020</span><span class="ev"><strong>Wall</strong> branch opens — six locations strong.</span></li>
+        <li><span class="yr">2026</span><span class="ev">Celebrating <strong>89 years</strong> serving the Jersey Shore.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Products / Categories -->
+<section class="cats" id="products">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">What We Stock</span>
+      <h2>Everything electrical, under one roof</h2>
+      <p>A full-line distributor for contractors, facilities, and homeowners — plus the newest energy and EV technology on the market.</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12c.6.6 1 1.4 1 2h6c0-.6.4-1.4 1-2a7 7 0 0 0-4-12z"/></svg></div>
+        <h3>Lighting &amp; Fixtures</h3>
+        <p>Commercial &amp; residential lighting, LED retrofits, controls and specialty fixtures.</p>
+      </div>
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><path d="M4 4h16v6H4zM4 14h16v6H4zM8 7h.01M8 17h.01"/></svg></div>
+        <h3>Panels &amp; Distribution</h3>
+        <p>Load centers, breakers, meter equipment, and low-profile furred wall boxes.</p>
+      </div>
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><path d="M6 20V10M6 10a4 4 0 1 1 8 0v4a4 4 0 0 0 8 0V4"/></svg></div>
+        <h3>Wire &amp; Cable</h3>
+        <p>Building wire, MC cable, cable-stop transition fittings — daily copper pricing on hand.</p>
+      </div>
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M9 7h6M12 21v-3"/></svg></div>
+        <h3>EV Charging</h3>
+        <p>RAB, Thermolec &amp; RVE energy-management systems for home and commercial charging.</p>
+      </div>
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></div>
+        <h3>Ventilation &amp; Air</h3>
+        <p>Panasonic WhisperGreen® Select customizable ventilation fans and accessories.</p>
+      </div>
+      <div class="cat">
+        <div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2"><path d="M3 9l9-6 9 6v11H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+        <h3>Tools &amp; Supplies</h3>
+        <p>Boxes, fittings, conduit, gear and the everyday supplies that keep the truck stocked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Locations -->
+<section class="locations" id="locations">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Six Branches, One Team</span>
+      <h2>Find your nearest Good Friend Electric</h2>
+      <p>Full-service counters across Ocean &amp; Monmouth County. Stop in, call ahead, or set up will-call.</p>
+    </div>
+    <div class="loc-grid">
+
+      <div class="loc hq">
+        <span class="flag">Original Location · Est. 1937</span>
+        <h3>Toms River</h3>
+        <address>265 Route 37 East<br>Toms River, NJ 08753</address>
+        <a class="phone" href="tel:+17323494100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (732) 349-4100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=265+Route+37+East+Toms+River+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="flag">Opened 1987</span>
+        <h3>Lacey</h3>
+        <address>403 Route 9<br>Lacey Township, NJ 08731</address>
+        <a class="phone" href="tel:+16096938100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (609) 693-8100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=403+Route+9+Lacey+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="flag">Opened 1989</span>
+        <h3>Brick</h3>
+        <address>534 Brick Boulevard<br>Brick, NJ 08723</address>
+        <a class="phone" href="tel:+17329207100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (732) 920-7100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=534+Brick+Boulevard+Brick+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="flag">Opened 1995</span>
+        <h3>Manahawkin</h3>
+        <address>325 Route 72 East<br>Manahawkin, NJ 08050</address>
+        <a class="phone" href="tel:+16099789100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (609) 978-9100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=325+Route+72+East+Manahawkin+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="flag">Opened 1998</span>
+        <h3>Lakewood</h3>
+        <address>121 East County Line Road<br>Lakewood, NJ 08701</address>
+        <a class="phone" href="tel:+17329423100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (732) 942-3100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=121+East+County+Line+Road+Lakewood+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <span class="flag">Opened 2020 · Newest</span>
+        <h3>Wall</h3>
+        <address>1245 18th Avenue<br>Wall Township, NJ 07719</address>
+        <a class="phone" href="tel:+17324565100">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0 1 22 16.9z"/></svg>
+          (732) 456-5100
+        </a>
+        <div class="links">
+          <a href="https://maps.google.com/?q=1245+18th+Avenue+Wall+NJ" target="_blank" rel="noopener">Directions →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Hours -->
+<section class="hours" id="hours">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Store Hours</span>
+      <h2>Open when contractors need us</h2>
+      <p style="color:#dce6fb;max-width:40ch">Weekday counters open at 7:30am so your crew rolls out on time. Saturday hours vary by branch.</p>
+    </div>
+    <div class="card-set">
+      <div class="hcard">
+        <div class="d">All Locations<br><small>Monday – Friday</small></div>
+        <div class="t">7:30a – 5:00p</div>
+      </div>
+      <div class="hcard">
+        <div class="d">Toms River<br><small>Saturday</small></div>
+        <div class="t">8:00a – 5:00p</div>
+      </div>
+      <div class="hcard">
+        <div class="d">Wall · Manahawkin · Lacey · Brick · Lakewood<br><small>Saturday</small></div>
+        <div class="t">8:00a – 12:00p</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-info">
+      <span class="eyebrow">Get In Touch</span>
+      <h3>Open an account or place an order</h3>
+      <p style="color:var(--slate)">Call your nearest branch, or send us a note and we'll get right back to you. New contractor accounts welcome.</p>
+      <a class="big-phone" href="tel:+17323494100">(732) 349-4100</a>
+      <ul>
+        <li><strong>Headquarters:</strong>&nbsp; 265 Route 37 East, Toms River, NJ 08753</li>
+        <li><strong>Hours:</strong>&nbsp; Mon–Fri 7:30am–5:00pm · Sat varies by branch</li>
+        <li><strong>Serving:</strong>&nbsp; Ocean &amp; Monmouth County, NJ</li>
+      </ul>
+    </div>
+    <form class="lead" id="leadForm" novalidate>
+      <div class="row">
+        <div><label for="name">Name</label><input id="name" name="name" required></div>
+        <div><label for="company">Company</label><input id="company" name="company"></div>
+      </div>
+      <div class="row">
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+      </div>
+      <label for="branch">Preferred branch</label>
+      <select id="branch" name="branch">
+        <option>Toms River</option><option>Lacey</option><option>Brick</option>
+        <option>Manahawkin</option><option>Lakewood</option><option>Wall</option>
+      </select>
+      <label for="msg">How can we help?</label>
+      <textarea id="msg" name="message" rows="4" placeholder="Tell us what you need…"></textarea>
+      <button class="btn btn-gold" type="submit">Send Message</button>
+      <p class="form-note" id="formNote">We typically reply within one business day.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div class="fcol">
+        <img class="flogo" src="assets/logo.gif" alt="Good Friend Electric">
+        <p>Family-owned electrical &amp; lighting distributor serving the Jersey Shore since 1937. Four generations. Six branches. One good friend.</p>
+      </div>
+      <div class="fcol">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#hours">Store Hours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Branches</h4>
+        <ul>
+          <li><a href="tel:+17323494100">Toms River · (732) 349-4100</a></li>
+          <li><a href="tel:+16096938100">Lacey · (609) 693-8100</a></li>
+          <li><a href="tel:+17329207100">Brick · (732) 920-7100</a></li>
+          <li><a href="tel:+16099789100">Manahawkin · (609) 978-9100</a></li>
+          <li><a href="tel:+17329423100">Lakewood · (732) 942-3100</a></li>
+          <li><a href="tel:+17324565100">Wall · (732) 456-5100</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> Good Friend Electric. All rights reserved.</span>
+      <span>Established 1937 · Toms River, New Jersey</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu
+  const t=document.getElementById('menuToggle'),m=document.getElementById('menu');
+  t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{m.classList.remove('open');t.setAttribute('aria-expanded',false)}));
+  // year
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // Lead form — set FORM_ENDPOINT to a Formspree (or similar) URL before go-live.
+  const FORM_ENDPOINT='';
+  const form=document.getElementById('leadForm'),note=document.getElementById('formNote');
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(!form.name.value||!form.email.value){note.textContent='Please add your name and email.';note.style.color='#c0392b';return;}
+    if(!FORM_ENDPOINT){note.textContent='Form not yet connected — call your nearest branch and we’ll take care of you.';note.style.color='#8a6a00';return;}
+    note.textContent='Sending…';note.style.color='';
+    try{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});
+      if(r.ok){form.reset();note.textContent='Thanks! We’ll be in touch within one business day.';note.style.color='#1e7d34';}
+      else throw 0;
+    }catch{note.textContent='Something went wrong — please call us instead.';note.style.color='#c0392b';}
+  });
+</script>
+</body>
+</html>
