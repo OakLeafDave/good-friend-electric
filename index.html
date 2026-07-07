@@ -245,6 +245,69 @@
     .hero,.hero::after,.hero-badge .disc{animation:none}
     *{scroll-behavior:auto}
   }
+
+  /* ---------- Heritage feature + interactive timeline ---------- */
+  .about .wrap{display:block}
+  .heritage{display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:center;margin:2.4rem 0 3rem}
+  .heritage-photo{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);margin:0}
+  .heritage-photo img{width:100%;display:block;filter:grayscale(1) contrast(1.04);transform:scale(1.03);transition:transform 7s ease,filter 1.2s ease}
+  .heritage-photo:hover img,.heritage-photo:focus-within img{transform:scale(1.13);filter:grayscale(.55) contrast(1.06)}
+  .heritage-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1.2rem .95rem;color:#fff;font-size:.92rem;line-height:1.4;background:linear-gradient(transparent,rgba(20,48,111,.9))}
+  .heritage-photo .tag{display:inline-block;background:var(--gold);color:var(--blue-dark);font-weight:700;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;padding:.22em .6em;border-radius:5px;margin-right:.55em;vertical-align:1px}
+  .heritage-copy p{color:var(--slate);margin-bottom:1rem}
+  .heritage-copy p strong{color:var(--ink)}
+
+  /* No-JS / fallback list */
+  .tl-source{list-style:none;max-width:760px;margin:0 auto;display:grid;gap:.75rem}
+  .tl-source li{padding-left:4.4rem;position:relative;color:var(--slate)}
+  .tl-source li::before{content:attr(data-year);position:absolute;left:0;top:0;font-family:'Barlow Condensed',sans-serif;font-weight:700;color:var(--blue);font-size:1.25rem}
+  .tl.enhanced .tl-source{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+  .tl-track{position:relative;display:flex;justify-content:space-between;gap:.4rem;padding:1.5rem 2px .3rem;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
+  .tl-track::-webkit-scrollbar{height:0}
+  .tl-line{position:absolute;top:calc(1.5rem + 6px);left:8px;right:8px;height:3px;background:var(--line);border-radius:3px}
+  .tl-fill{position:absolute;top:0;left:0;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue-light));border-radius:3px;transition:width .6s cubic-bezier(.4,0,.2,1)}
+  .tl-node{flex:0 0 auto;min-width:70px;display:flex;flex-direction:column;align-items:center;gap:.5rem;background:none;border:0;cursor:pointer;scroll-snap-align:center;padding:0;color:var(--slate);font:inherit}
+  .tl-dot{width:15px;height:15px;border-radius:50%;background:#fff;border:3px solid var(--blue-light);position:relative;z-index:1;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}
+  .tl-yr{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.02rem;letter-spacing:.02em;transition:color .2s}
+  .tl-node:hover .tl-dot,.tl-node:focus-visible .tl-dot{transform:scale(1.18);border-color:var(--blue)}
+  .tl-node:focus-visible{outline:none}
+  .tl-node[aria-selected="true"] .tl-dot{background:var(--gold);border-color:var(--gold);transform:scale(1.4);box-shadow:0 0 0 6px rgba(246,201,69,.22)}
+  .tl-node[aria-selected="true"] .tl-yr{color:var(--blue-dark)}
+  .tl-node[aria-selected="true"] .tl-dot::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid var(--gold);animation:tlPulse 1.7s ease-out infinite}
+  @keyframes tlPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.3);opacity:0}}
+
+  .tl-stage{position:relative;margin-top:1.5rem;background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:230px}
+  .tl-panel{position:absolute;inset:0;display:grid;grid-template-columns:1.05fr .95fr;gap:1.6rem;padding:1.9rem;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .5s ease,transform .5s ease}
+  .tl-panel.active{opacity:1;transform:none;pointer-events:auto;position:relative}
+  .tl-panel .p-body{align-self:center}
+  .tl-panel .p-kind{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue-light);margin-bottom:.35rem}
+  .tl-panel .p-yr{font-family:'Barlow Condensed',sans-serif;font-size:2.9rem;color:var(--blue);line-height:.95}
+  .tl-panel h3{font-size:1.55rem;color:var(--blue-dark);margin:.25rem 0 .55rem}
+  .tl-panel p{color:var(--slate)}
+  .tl-panel .p-media{border-radius:11px;overflow:hidden;align-self:stretch;min-height:190px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));position:relative}
+  .tl-panel .p-media img{width:100%;height:100%;object-fit:cover}
+  .tl-panel .p-media.hist img{filter:grayscale(1) contrast(1.05);animation:kb 14s ease-in-out infinite alternate}
+  @keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14)}}
+  .tl-panel .p-media.logo{background:#fff;border:1px solid var(--line)}
+  .tl-panel .p-media.logo img{object-fit:contain;padding:2.2rem}
+  .tl-panel .p-media.branch,.tl-panel .p-media.emblem{flex-direction:column;color:#fff;gap:.5rem;text-align:center;padding:1.5rem}
+  .tl-panel .p-media.branch .pin{width:48px;height:48px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
+  .tl-panel .p-media.branch .p-city{font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;line-height:1;color:var(--gold)}
+  .tl-panel .p-media.branch .p-sub{font-size:.82rem;color:#cfe0fb;letter-spacing:.04em;text-transform:uppercase}
+  .tl-panel .p-media.emblem .p-watermark{font-family:'Barlow Condensed',sans-serif;font-size:5rem;color:rgba(255,255,255,.14);line-height:1;font-weight:700}
+  .tl-panel .p-media.emblem svg{position:absolute;width:40px;height:40px;opacity:.9}
+
+  @media(max-width:760px){
+    .heritage{grid-template-columns:1fr;gap:1.6rem}
+    .tl-panel{grid-template-columns:1fr;gap:1.2rem;padding:1.4rem}
+    .tl-panel .p-media{min-height:150px;order:2}
+    .tl-stage{min-height:0}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .heritage-photo img,.tl-panel .p-media.hist img,.tl-node[aria-selected="true"] .tl-dot::after{animation:none;transition:none}
+    .tl-panel{transition:opacity .2s}
+  }
 </style>
 </head>
 <body>
@@ -333,25 +396,38 @@
 <!-- About / History -->
 <section class="about" id="about">
   <div class="wrap">
-    <div>
+    <div class="sec-head center" style="max-width:760px">
       <span class="eyebrow">Our Story</span>
-      <h2 style="font-size:clamp(2rem,4vw,3rem);color:var(--blue-dark);margin:.3rem 0 1rem">89 years of powering the Shore</h2>
-      <p><strong>Good Friend Electric was founded in 1937 by Manny and Lillian Goodfriend</strong>, on Main Street in downtown Toms River. In 1949 Irving Rosen purchased the business, and by 1957 the company was incorporated as Good Friend Electric — the beginning of four generations of family ownership.</p>
-      <p>Today the company is led by President <strong>David Rosen</strong> and his son <strong>Ethan Rosen</strong>, Sales &amp; Operations Manager. Our associate team collectively brings <strong>more than 350 years</strong> of industry experience to every counter, every order, and every job site.</p>
-      <p>From a single downtown storefront to six full-service branches across Ocean &amp; Monmouth County, one thing hasn't changed: when you deal with Good Friend Electric, you're dealing with a good friend.</p>
-      <a class="btn btn-blue" href="#contact" style="margin-top:.6rem">Become a Customer</a>
+      <h2>89 years of powering the Shore</h2>
+      <p>From a single downtown storefront in 1937 to six full-service branches today — four generations of the Rosen family, one good friend.</p>
     </div>
-    <div class="timeline">
-      <ul>
-        <li><span class="yr">1937</span><span class="ev">Founded by Manny &amp; Lillian Goodfriend on Main Street, Toms River.</span></li>
-        <li><span class="yr">1957</span><span class="ev">Incorporated as Good Friend Electric under the Rosen family.</span></li>
-        <li><span class="yr">1987</span><span class="ev">50th anniversary — first branch opens in <strong>Lacey</strong>.</span></li>
-        <li><span class="yr">1989</span><span class="ev"><strong>Brick</strong> branch opens.</span></li>
-        <li><span class="yr">1995</span><span class="ev"><strong>Manahawkin</strong> branch opens.</span></li>
-        <li><span class="yr">1998</span><span class="ev"><strong>Lakewood</strong> branch opens.</span></li>
-        <li><span class="yr">2020</span><span class="ev"><strong>Wall</strong> branch opens — six locations strong.</span></li>
-        <li><span class="yr">2026</span><span class="ev">Celebrating <strong>89 years</strong> serving the Jersey Shore.</span></li>
-      </ul>
+
+    <div class="heritage">
+      <figure class="heritage-photo">
+        <img src="assets/storefront-wide.jpg" alt="Good Friend Electric's original Toms River storefront in the 1950s — Lighting Fixtures &amp; Electrical Supplies" loading="lazy" width="1100" height="438">
+        <figcaption><span class="tag">Circa 1950s</span>Our original storefront on Route 37, Toms River.</figcaption>
+      </figure>
+      <div class="heritage-copy">
+        <p><strong>Founded in 1937 by Manny and Lillian Goodfriend</strong> on Main Street in downtown Toms River. Irving Rosen bought the business in 1949, and by 1957 it was incorporated as Good Friend Electric — the beginning of four generations of family ownership.</p>
+        <p>Today it's led by President <strong>David Rosen</strong> and his son <strong>Ethan Rosen</strong>. Our team brings <strong>more than 350 years</strong> of combined industry experience to every counter and every job site.</p>
+        <a class="btn btn-blue" href="#contact">Become a Customer</a>
+      </div>
+    </div>
+
+    <div class="tl" id="timeline">
+      <ol class="tl-source">
+        <li data-year="1937" data-title="The beginning" data-kind="founding" data-photo="assets/storefront-wide.jpg">Manny &amp; Lillian Goodfriend open Good Friend Electric on Main Street in downtown Toms River.</li>
+        <li data-year="1949" data-title="The Rosen era begins" data-kind="milestone">Irving Rosen purchases the business — the start of four generations of Rosen family ownership.</li>
+        <li data-year="1953" data-title="A home on Route 37" data-kind="milestone" data-photo="assets/storefront-wide.jpg">The store moves to Route 37 in Toms River, still the company's flagship location today.</li>
+        <li data-year="1957" data-title="Good Friend Electric, Inc." data-kind="milestone">Zev Rosen joins his father after RPI and General Electric; the company incorporates as Good Friend Electric.</li>
+        <li data-year="1974" data-title="Room to grow" data-kind="milestone">Good Friend Electric doubles the size of its Toms River building to keep up with demand.</li>
+        <li data-year="1987" data-title="50 years &amp; branch #1" data-kind="branch" data-city="Lacey">The golden anniversary — and the very first branch opens in Lacey.</li>
+        <li data-year="1989" data-title="Brick opens" data-kind="branch" data-city="Brick">A third location joins the family on Brick Boulevard.</li>
+        <li data-year="1995" data-title="Manahawkin opens" data-kind="branch" data-city="Manahawkin">Good Friend Electric expands south to Route 72.</li>
+        <li data-year="1998" data-title="Lakewood opens" data-kind="branch" data-city="Lakewood">A fifth branch opens on East County Line Road.</li>
+        <li data-year="2020" data-title="Wall opens" data-kind="branch" data-city="Wall">The newest branch brings the count to six across two counties.</li>
+        <li data-year="2026" data-title="89 years strong" data-kind="anniversary" data-photo="assets/logo.gif">Four generations, six branches, one promise — when you deal with us, you deal with a good friend.</li>
+      </ol>
     </div>
   </div>
 </section>
@@ -653,6 +729,89 @@
   const nav=document.querySelector('header.nav');
   const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>8);
   onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  // ---- Interactive heritage timeline ----
+  (function(){
+    const tl=document.getElementById('timeline');
+    if(!tl)return;
+    const src=[...tl.querySelectorAll('.tl-source > li')];
+    if(!src.length)return;
+    const items=src.map(li=>({year:li.dataset.year,title:li.dataset.title,kind:li.dataset.kind||'milestone',city:li.dataset.city||'',photo:li.dataset.photo||'',text:li.innerHTML}));
+    const kindLabel={founding:'The Founding',milestone:'Milestone',branch:'New Branch',anniversary:'Anniversary'};
+    const pinSVG='<svg class="pin" viewBox="0 0 24 24" fill="#f6c945" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>';
+    const boltSVG='<svg viewBox="0 0 24 24" fill="none" stroke="#f6c945" stroke-width="2" aria-hidden="true"><path d="M13 2L4.5 13H11l-1 9 8.5-11H12z"/></svg>';
+
+    const track=document.createElement('div');track.className='tl-track';track.setAttribute('role','tablist');track.setAttribute('aria-label','Good Friend Electric history timeline');
+    const line=document.createElement('div');line.className='tl-line';
+    const fill=document.createElement('span');fill.className='tl-fill';line.appendChild(fill);track.appendChild(line);
+    const stage=document.createElement('div');stage.className='tl-stage';
+
+    items.forEach((it,i)=>{
+      const node=document.createElement('button');
+      node.className='tl-node';node.type='button';node.setAttribute('role','tab');
+      node.id='tlt-'+i;node.setAttribute('aria-controls','tlp-'+i);node.setAttribute('aria-selected','false');node.tabIndex=-1;
+      node.innerHTML='<span class="tl-dot"></span><span class="tl-yr">'+it.year+'</span>';
+      track.appendChild(node);
+
+      let media;
+      if(/logo\.gif$/.test(it.photo)){
+        media='<div class="p-media logo"><img src="'+it.photo+'" alt="Good Friend Electric 89th anniversary logo"></div>';
+      }else if(it.photo){
+        media='<div class="p-media hist"><img src="'+it.photo+'" alt="Good Friend Electric storefront, '+it.year+'" loading="lazy"></div>';
+      }else if(it.kind==='branch'){
+        media='<div class="p-media branch">'+pinSVG+'<div class="p-city">'+it.city+', NJ</div><div class="p-sub">Now open</div></div>';
+      }else{
+        media='<div class="p-media emblem"><span class="p-watermark">'+it.year+'</span>'+boltSVG+'</div>';
+      }
+      const panel=document.createElement('article');
+      panel.className='tl-panel';panel.id='tlp-'+i;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby','tlt-'+i);
+      panel.innerHTML='<div class="p-body"><span class="p-kind">'+(kindLabel[it.kind]||'Milestone')+'</span><div class="p-yr">'+it.year+'</div><h3>'+it.title+'</h3><p>'+it.text+'</p></div>'+media;
+      stage.appendChild(panel);
+    });
+
+    const box=document.createElement('div');box.appendChild(track);box.appendChild(stage);
+    tl.appendChild(box);tl.classList.add('enhanced');
+
+    const nodes=[...track.querySelectorAll('.tl-node')];
+    const panels=[...stage.querySelectorAll('.tl-panel')];
+    let cur=-1,timer=null;
+    const canHover=matchMedia('(hover:hover)').matches;
+
+    function center(i){const n=nodes[i];track.scrollTo({left:n.offsetLeft-track.clientWidth/2+n.offsetWidth/2,behavior:reduce?'auto':'smooth'});}
+    function activate(i,focus){
+      if(i===cur)return;cur=i;
+      nodes.forEach((n,j)=>{const on=j===i;n.setAttribute('aria-selected',on);n.tabIndex=on?0:-1;});
+      panels.forEach((p,j)=>p.classList.toggle('active',j===i));
+      fill.style.width=(nodes.length>1?(i/(nodes.length-1))*100:100)+'%';
+      center(i);if(focus)nodes[i].focus();
+    }
+    function next(){activate((cur+1)%nodes.length);}
+    function play(){if(reduce||timer)return;timer=setInterval(next,3800);}
+    function stop(){clearInterval(timer);timer=null;}
+
+    nodes.forEach((n,i)=>{
+      n.addEventListener('click',()=>{stop();activate(i,true);});
+      if(canHover)n.addEventListener('mouseenter',()=>activate(i));
+      n.addEventListener('focus',()=>{stop();activate(i);});
+      n.addEventListener('keydown',e=>{
+        let t=null;
+        if(e.key==='ArrowRight'||e.key==='ArrowDown')t=(i+1)%nodes.length;
+        else if(e.key==='ArrowLeft'||e.key==='ArrowUp')t=(i-1+nodes.length)%nodes.length;
+        else if(e.key==='Home')t=0;else if(e.key==='End')t=nodes.length-1;
+        if(t!==null){e.preventDefault();stop();activate(t,true);}
+      });
+    });
+    tl.addEventListener('mouseenter',stop);
+    tl.addEventListener('mouseleave',play);
+    tl.addEventListener('focusout',e=>{if(!tl.contains(e.relatedTarget))play();});
+
+    activate(0);
+    if('IntersectionObserver'in window){
+      const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?play():stop()),{threshold:.2});
+      io.observe(tl);
+    }
+    document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
+  })();
 
   // Lead form — set FORM_ENDPOINT to a Formspree (or similar) URL before go-live.
   const FORM_ENDPOINT='';
